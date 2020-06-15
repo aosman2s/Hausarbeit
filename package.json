@@ -1,0 +1,30 @@
+{
+  "name": "hausarbeit_vue_app",
+  "version": "1.0.0",
+  "description": "klausur",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aosman2s/Hausarbeit.git"
+  },
+  "author": "Ahmed Osman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aosman2s/Hausarbeit/issues"
+  },
+  "homepage": "https://github.com/aosman2s/Hausarbeit#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
