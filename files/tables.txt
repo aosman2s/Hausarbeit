@@ -1,0 +1,10 @@
+    A table is defined using the <table> element, and contains a number of table cells ( <td>, for “table data” ) which are organized into table rows ( <tr>). The markup (HTML code) for a table is always based on rows, never columns.
+    Table cells which act as column headers or row headers should use the <th> (table header) element.
+    Table cells can be merged using the colspan and rowspan attributes.
+    Tables can be broken into sections using the following elements:
+        <thead> — Table header
+        <tbody> — Table body
+        <tfoot> — Table footer
+    A caption can be added to a table using the <caption> element.
+    You can use <col> and <colgroup> to define table columns for styling. However, there are a number of limitations with this practice.
+

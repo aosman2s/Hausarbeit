@@ -1,0 +1,5 @@
+Headings help in defining the hierarchy and the structure of the web page content.
+
+HTML offers six levels of heading tags, <h1> through <h6>; the higher the heading level number, the greater its importance — therefore <h1> tag defines the most important heading, whereas the <h6> tag defines the least important heading in the document.
+
+By default, browsers display headings in larger and bolder font than normal text. Also, <h1> headings are displayed in largest font, whereas <h6> headings are displayed in smallest font.

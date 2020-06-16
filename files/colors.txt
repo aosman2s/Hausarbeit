@@ -1,0 +1,7 @@
+The <color> CSS data type represents a color in the sRGB color space. A <color> may also include an alpha-channel transparency value, indicating how the color should composite with its background.
+
+A <color> can be defined in any of the following ways:
+
+    Using a keyword (such as blue or transparent)
+    Using the RGB cubic-coordinate system (via the #-hexadecimal or the rgb() and rgba() functional notations)
+    Using the HSL cylindrical-coordinate system (via the hsl() and hsla() functional notations)
