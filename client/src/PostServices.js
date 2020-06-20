@@ -1,15 +1,15 @@
-import axios from axios;
+import axios from 'axios';
 
 const url = 'http://localhost:5000/api/posts/';
 
 class PostService{
 
-    static getHTMLText(){
-        return new Promise( async (resolve, reject)=>{
+    static async getHTMLText(){
+        return new Promise(  (resolve, reject)=>{
             try{
-                const res = await axios.get(`${url}html`)
+                const res =  axios.get(`${url}html`)
                 const data = res.data;
-                resolve( data)
+                resolve(data)
             }catch(err){
                 reject(err)
             }
