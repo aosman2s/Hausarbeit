@@ -1,30 +1,40 @@
 <template>
   <div>
-      <h1>{{title}}</h1>
-      <div>{{content}}</div>
+    <div>
+      <h1>{{ title }}</h1>
+      <div>{{ content }}</div>
+    </div>
+    <ul>
+      <li><button @click="changeContent('headings')">1</button></li>
+      <li><button @click="changeContent('paragraphs')">2</button></li>
+      <li><button @click="changeContent('tables')">3</button></li>
+    </ul>
   </div>
 </template>
 <script>
-//import PostServices from '../PostServices.js'
 export default {
-    name: "tab_html",
-    data() {
+  name: "tab_html",
+  data() {
     return {
-            title:"",
-            content:""
-        ,
-        error :""
+      title: "",
+      content: "",
     };
   },
   async created() {
+    const res = await fetch("http://localhost:5000/api/posts/html");
 
-     const res = await fetch("http://localhost:5000/api/posts/html")
-
-     const data = await res.json()
-     this.title = data.title
-     this.content=data.content
-     console.log(data.title)
-     console.log(this.data.post)
+    const data = await res.json();
+    this.title = data.title;
+    this.content = data.content;
   },
-}
+  methods: {
+      async changeContent(api){
+        const res = await fetch(`http://localhost:5000/api/posts/html/${api}`);
+        const data = await res.json();
+         this.title = data.title;
+        this.content = data.content;
+
+      }
+  },
+};
 </script>

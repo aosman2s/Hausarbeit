@@ -4,10 +4,12 @@
       v-for="tab in tabs"
       v-bind:key="tab"
       v-bind:class="['tab-button', { active: currentTab === tab }]"
-      v-on:click="currentTab = tab"
+      v-on:click= 'changeImg(tab)'
+
     >
       {{ tab }}
     </button>
+    <img alt="Vue logo" :src='imgSrc'>
 
     <component v-bind:is="currentTabComponent" class="tab"></component>
   </div>
@@ -28,14 +30,29 @@ export default {
   data() {
     return {
       currentTab :"HTML",
-      tabs:["HTML","CSS","JavaScript"]
+      tabs:["HTML","CSS","JavaScript"],
+      imgSrc:"http://localhost:5000/api/posts/html/img"
     };
   },
   computed: {
     currentTabComponent : function(){
+      
       return "tab_"+this.currentTab.toLowerCase();
     }
-  }
+  },
+  methods: {
+    changeImg(tab){
+      this.currentTab = tab
+      if(this.currentTab.toLowerCase()=='html'){
+        this.imgSrc = 'http://localhost:5000/api/posts/html/img'
+      }else if(this.currentTab.toLowerCase()=='css'){
+        this.imgSrc = 'http://localhost:5000/api/posts/css/img'
+      }else{
+        this.imgSrc = 'http://localhost:5000/api/posts/javascript/img'
+      }
+      
+    }
+  },
 };
 </script>
 
