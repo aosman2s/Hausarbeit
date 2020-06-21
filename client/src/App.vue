@@ -1,22 +1,26 @@
 <template>
   <div id="app">
-    
+    <div class="header">
+      <h1>Ahmed Osman Home Page</h1>
+    </div>
     <MainComponent />
   </div>
 </template>
 
 <script>
-import MainComponent from './components/MainComponent.vue'
+import "./components/Body.css"
+import MainComponent from "./components/MainComponent.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    MainComponent
-  }
-}
+    MainComponent,
+  },
+};
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

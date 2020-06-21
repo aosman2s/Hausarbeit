@@ -1,13 +1,22 @@
 <template>
   <div>
-    <div>
-      <h1>{{ title }}</h1>
-      <div>{{ content }}</div>
-    </div>
-    <ul>
+    <div class="side-1">
+      <ul>
       <li><button @click="changeContent('functions')">1</button></li>
       <li><button @click="changeContent('objects')">2</button></li>
     </ul>
+    </div>
+
+    <div class="content">
+      <h1>{{ title }}</h1>
+      <img alt="Vue logo" :src="imgSrc" />
+      <div>{{ content }}</div>
+    </div>
+
+    <div class="side-2">
+
+    </div>
+    
   </div>
 </template>
 <script>
@@ -17,6 +26,7 @@ export default {
     return {
       title: "",
       content: "",
+      imgSrc: "http://localhost:5000/api/posts/javascript/img"
     };
   },
   async created() {
