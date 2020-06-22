@@ -1,11 +1,24 @@
 <template>
   <div>
     <div class="side-1">
-      <ul>
-        <li><button @click="changeContent('headings')">1</button></li>
-        <li><button @click="changeContent('paragraphs')">2</button></li>
-        <li><button @click="changeContent('tables')">3</button></li>
-      </ul>
+      <button
+        @click="changeContent('headings')"
+        :class="['side-1-btn', { active: currentTab === 'headings' }]"
+      >
+        Headings
+      </button>
+      <button
+        @click="changeContent('paragraphs')"
+        :class="['side-1-btn', { active: currentTab === 'paragraphs' }]"
+      >
+        Paragraphs
+      </button>
+      <button
+        @click="changeContent('tables')"
+        :class="['side-1-btn', { active: currentTab === 'tables' }]"
+      >
+        Tables
+      </button>
     </div>
 
     <div class="content">
@@ -14,9 +27,7 @@
       <div>{{ content }}</div>
     </div>
 
-    <div class="side-2">
-
-    </div>
+    <div class="side-2"></div>
   </div>
 </template>
 <script>
@@ -26,7 +37,8 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "http://localhost:5000/api/posts/html/img"
+      imgSrc: "http://localhost:5000/api/posts/html/img",
+      currentTab: "",
     };
   },
   async created() {
@@ -40,6 +52,7 @@ export default {
     async changeContent(api) {
       const res = await fetch(`http://localhost:5000/api/posts/html/${api}`);
       const data = await res.json();
+      this.currentTab = api;
       this.title = data.title;
       this.content = data.content;
     },

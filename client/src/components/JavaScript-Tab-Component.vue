@@ -1,10 +1,18 @@
 <template>
   <div>
     <div class="side-1">
-      <ul>
-      <li><button @click="changeContent('functions')">1</button></li>
-      <li><button @click="changeContent('objects')">2</button></li>
-    </ul>
+      <button
+        @click="changeContent('functions')"
+        :class="['side-1-btn', { active: currentTab === 'functions' }]"
+      >
+        Headings
+      </button>
+      <button
+        @click="changeContent('objects')"
+        :class="['side-1-btn', { active: currentTab === 'objects' }]"
+      >
+        Paragraphs
+      </button>
     </div>
 
     <div class="content">
@@ -13,10 +21,7 @@
       <div>{{ content }}</div>
     </div>
 
-    <div class="side-2">
-
-    </div>
-    
+    <div class="side-2"></div>
   </div>
 </template>
 <script>
@@ -26,7 +31,8 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "http://localhost:5000/api/posts/javascript/img"
+      imgSrc: "http://localhost:5000/api/posts/javascript/img",
+      currentTab:""
     };
   },
   async created() {
@@ -37,13 +43,15 @@ export default {
     this.content = data.content;
   },
   methods: {
-      async changeContent(api){
-        const res = await fetch(`http://localhost:5000/api/posts/javaScript/${api}`);
-        const data = await res.json();
-         this.title = data.title;
-        this.content = data.content;
-
-      }
+    async changeContent(api) {
+      const res = await fetch(
+        `http://localhost:5000/api/posts/javaScript/${api}`
+      );
+      const data = await res.json();
+      this.currentTab=api
+      this.title = data.title;
+      this.content = data.content;
+    },
   },
 };
 </script>

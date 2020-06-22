@@ -1,11 +1,24 @@
 <template>
   <div>
     <div class="side-1">
-      <ul>
-        <li><button @click="changeContent('selector')">1</button></li>
-        <li><button @click="changeContent('colors')">2</button></li>
-        <li><button @click="changeContent('boxes')">3</button></li>
-      </ul>
+      <button
+        @click="changeContent('selector')"
+        :class="['side-1-btn', { active: currentTab === 'selector' }]"
+      >
+        Headings
+      </button>
+      <button
+        @click="changeContent('colors')"
+        :class="['side-1-btn', { active: currentTab === 'colors' }]"
+      >
+        Paragraphs
+      </button>
+      <button
+        @click="changeContent('boxes')"
+        :class="['side-1-btn', { active: currentTab === 'boxes' }]"
+      >
+        Tables
+      </button>
     </div>
 
     <div class="content">
