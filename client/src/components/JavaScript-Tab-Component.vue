@@ -5,13 +5,13 @@
         @click="changeContent('functions')"
         :class="['side-1-btn', { active: currentTab === 'functions' }]"
       >
-        Headings
+        Functions
       </button>
       <button
         @click="changeContent('objects')"
         :class="['side-1-btn', { active: currentTab === 'objects' }]"
       >
-        Paragraphs
+        Objects
       </button>
     </div>
 

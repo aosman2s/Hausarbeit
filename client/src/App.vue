@@ -3,30 +3,30 @@
     <div class="header">
       <h1>Ahmed Osman Home Page</h1>
     </div>
-    <MainComponent />
+    <router-link to="/"></router-link>
+    <router-view />
   </div>
 </template>
 
-<script>
-import "./components/Body.css"
-import MainComponent from "./components/MainComponent.vue";
-
-export default {
-  name: "App",
-  components: {
-    MainComponent,
-  },
-};
-</script>
-
 <style>
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>

@@ -122,11 +122,16 @@ li button {
   }
 
   .side-1 {
-    height: 20px;
+    height: 60px;
   }
 
   .side-2 {
     height: 90px;
+  }
+  .side-1-btn{
+    float: left;
+    width: 20%;
+    margin: 0.5em;
   }
 }
 

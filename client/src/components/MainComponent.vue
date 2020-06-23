@@ -12,9 +12,11 @@
     </div>
 
     <div class="main-body" style="width:100%;">
-      <component v-bind:is="currentTabComponent" class="tab-container"></component>
+      <router-view
+        v-bind:is="currentTabComponent"
+        class="tab-container"
+      ></router-view>
     </div>
-
   </div>
 </template>
 
@@ -22,7 +24,7 @@
 import tab_html from "./Html-Tab-Component.vue";
 import tab_css from "./Css-Tab-Component.vue";
 import tab_javascript from "./JavaScript-Tab-Component.vue";
-import "./Body.css"
+import "./Body.css";
 
 export default {
   name: "MainComponent",
@@ -33,8 +35,8 @@ export default {
   },
   data() {
     return {
-      currentTab: "HTML",
-      tabs: ["HTML", "CSS", "JavaScript"],
+      currentTab: "html",
+      tabs: ["html", "css", "javascript"],
     };
   },
   computed: {
@@ -42,16 +44,16 @@ export default {
       return "tab_" + this.currentTab.toLowerCase();
     },
   },
+  watch: {
+    $route(to) {
+      this.currentTab = to.name;
+      console.log(this.currentTab)
+    },
+  },
   methods: {
     changeImg(tab) {
       this.currentTab = tab;
-      if (this.currentTab.toLowerCase() == "html") {
-        this.imgSrc = "http://localhost:5000/api/posts/html/img";
-      } else if (this.currentTab.toLowerCase() == "css") {
-        this.imgSrc = "http://localhost:5000/api/posts/css/img";
-      } else {
-        this.imgSrc = "http://localhost:5000/api/posts/javascript/img";
-      }
+      this.$router.push({ path: tab.toLowerCase() });
     },
   },
 };
