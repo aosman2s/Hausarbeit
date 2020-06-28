@@ -3,7 +3,7 @@
     <div class="header">
       <h1>Ahmed Osman Home Page</h1>
     </div>
-    <router-link to="/html"></router-link>
+    <router-link to="/"></router-link>
     <router-view />
   </div>
 </template>
