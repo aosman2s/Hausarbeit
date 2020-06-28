@@ -31,12 +31,12 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "http://localhost:5000/api/posts/javascript/img",
+      imgSrc: "api/posts/javascript/img",
       currentTab:""
     };
   },
   async created() {
-    const res = await fetch("http://localhost:5000/api/posts/javaScript");
+    const res = await fetch("api/posts/javaScript");
 
     const data = await res.json();
     this.title = data.title;
@@ -45,7 +45,7 @@ export default {
   methods: {
     async changeContent(api) {
       const res = await fetch(
-        `http://localhost:5000/api/posts/javaScript/${api}`
+        `api/posts/javaScript/${api}`
       );
       const data = await res.json();
       this.currentTab=api

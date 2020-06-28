@@ -37,12 +37,12 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "http://localhost:5000/api/posts/html/img",
+      imgSrc: "api/posts/html/img",
       currentTab: "",
     };
   },
   async created() {
-    const res = await fetch("http://localhost:5000/api/posts/html");
+    const res = await fetch("api/posts/html");
 
     const data = await res.json();
     this.title = data.title;
@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     async changeContent(api) {
-      const res = await fetch(`http://localhost:5000/api/posts/html/${api}`);
+      const res = await fetch(`api/posts/html/${api}`);
       const data = await res.json();
       this.currentTab = api;
       this.title = data.title;

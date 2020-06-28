@@ -39,11 +39,11 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "http://localhost:5000/api/posts/css/img"
+      imgSrc: "api/posts/css/img"
     };
   },
   async created() {
-    const res = await fetch("http://localhost:5000/api/posts/css");
+    const res = await fetch("api/posts/css");
 
     const data = await res.json();
     this.title = data.title;
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     async changeContent(api) {
-      const res = await fetch(`http://localhost:5000/api/posts/css/${api}`);
+      const res = await fetch(`api/posts/css/${api}`);
       const data = await res.json();
       this.title = data.title;
       this.content = data.content;
