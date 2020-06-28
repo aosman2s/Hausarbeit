@@ -5,19 +5,19 @@
         @click="changeContent('selector')"
         :class="['side-1-btn', { active: currentTab === 'selector' }]"
       >
-        Headings
+        Selector
       </button>
       <button
         @click="changeContent('colors')"
         :class="['side-1-btn', { active: currentTab === 'colors' }]"
       >
-        Paragraphs
+        Colors
       </button>
       <button
         @click="changeContent('boxes')"
         :class="['side-1-btn', { active: currentTab === 'boxes' }]"
       >
-        Tables
+        Boxes
       </button>
     </div>
 

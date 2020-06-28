@@ -31,7 +31,7 @@ export default {
     return {
       title: "",
       content: "",
-      imgSrc: "api/posts/javascript/img",
+      imgSrc: "api/posts/javaScript/img",
       currentTab:""
     };
   },
